@@ -2,29 +2,43 @@
 //It must be loaded from index.html
 //It assumes that the file "myPalettes.js" has also been loaded
 
-let currentPalette;
+let xCentre, yCentre;
+let x 
+let y 
+let directionX = 0
+let directionY = 1
+let chosenColour
 
 function setup() {
-    createCanvas(windowWidth, windowHeight / 2);
-    currentPalette = randomPalette();
-    noStroke();
-    background("white");
+	createCanvas(800, 600);
+	background("skyblue");
+	noLoop();
 }
+ 
 
 function draw() {
-    fill(random(currentPalette));
-    const x = random(0, width);
-    const y = random(0, height);
-    circle(x, y, 100);
+	land();
+	drawSnowman(random(100, 300), 180);
+	drawSnowman(random(300, 500), 200);
+	drawSnowman(random(500, 700), 180);
+	snowFall();
+//	sunInSky();
+	holidayText();
 }
 
-function mouseClicked() {
-    background(255);
-    currentPalette = randomPalette();
+
+function holidayText(){
+	textSize(50);
+	strokeWeight(4);
+	fill("red");
+	textAlign(CENTER, BOTTOM);
+	text("Merry Christmas", width/2, 500);
 }
 
-function keyPressed() {
-    if (key === "s") {
-        save("my-p5-screenshot");
-    }
+function mousePressed(){
+	background("darkblue");
+	fill("skyblue");
+	circle(50, 50, 100);
+	
+	redraw();
 }
