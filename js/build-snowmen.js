@@ -30,3 +30,5 @@ function drawSnowman(xCentre, yCentre) {
 	rectMode(CENTER)
 	rect(xCentre - 20, yCentre + 50, 120, 15, 15);
 }
+
+//added in random comment
